@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { getFirestore, collection, addDoc } from 'firebase/firestore'; // Importe as funções corretas do Firestore
+import { collection, addDoc } from 'firebase/firestore'; 
+import { db } from '../firebase'; // Altere o caminho conforme necessário
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Carousel from './Carousel.jsx'
-
 import "./header.css"
 import logo from "../images/logo.png"
 import SpaceBurguer from "../images/spaceburguer.jpg"
@@ -10,24 +10,22 @@ import SpaceIce from "../images/spaceice.jpg"
 import MaisVendidos from './MaisVendidos.jsx';
 
 const Header = () => {
-  const [numeroMesa, setNumeroMesa] = useState('123');
+  const [numeroMesa, setNumeroMesa] = useState('');
   const [pedido, setPedido] = useState('');
   const [modal, setModal] = useState(true)
 
   const handleEnviarFormulario = async () => {
     if (numeroMesa === '') {
-      // Verifique se todos os campos obrigatórios estão preenchidos
       alert('Preencha os campos obrigatórios.');
       return;
     }
 
-    const db = getFirestore();
     const formularioRef = collection(db, 'mesas');
 
     try {
       const novoFormularioRef = await addDoc(formularioRef, {
-        mesa: numeroMesa, // Corrija aqui para enviar o número da mesa
-        pedido: pedido || null // Inclua o pedido apenas se houver texto
+        mesa: numeroMesa,
+        pedido: pedido || null
       });
 
       alert('Formulário enviado com sucesso!');

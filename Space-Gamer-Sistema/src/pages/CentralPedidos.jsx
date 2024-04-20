@@ -5,7 +5,7 @@ import {
 } from 'firebase/firestore';
 import "./CentralPedidos.css"
 
-const VisualizarPedidos = () => {
+const CentralPedidos = () => {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
@@ -52,4 +52,4 @@ const VisualizarPedidos = () => {
   );
 };
 
-export default VisualizarPedidos;
+export default CentralPedidos;
