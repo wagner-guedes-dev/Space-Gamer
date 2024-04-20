@@ -3,6 +3,7 @@
     justify-content: center;
     width: 90%;
     margin: 0 auto;
+
     border-radius: 5px;
     background-color: #ffff;
     max-height:2000px; 
@@ -12,6 +13,8 @@
     text-align: center;
     transition:max-height 0.5s;
     margin-bottom: 40px;
+    border: none;
+
 }
 
 .mais-vendidos-minimizado {
@@ -20,7 +23,8 @@
         transition:max-height 0.5s;
         transition: 0.5s;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        
 }
 
 .mais-vendidos h1{
@@ -33,7 +37,7 @@
     font-weight:600;
     border-radius: 5px;
     border: 2px solid #8833ab;
-    
+
 }
 
 .image img{
@@ -61,10 +65,15 @@
     margin-top: 5px;
     font-size: 12px;
     padding-right: 10px;
+    
 }
 
 .value-product{
     font-size: 14px;
+}
+
+.none {
+    opacity: 0;
 }
 
 .center{
@@ -74,5 +83,7 @@
     justify-content: center;
     width: 100%;
 }
+
+
 
 
