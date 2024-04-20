@@ -3,16 +3,22 @@ import './MaisVendidos.css'
 
 import estrela from '../images/estrela.png'
 import sensaçao from '../images/tacasensacao.png'
+import nebulosa from '../images/nebulosa.png'
+import FritasCheddar from '../images/batatacheddar.png'
 
 
+const MaisVendidos = ({ setMaisVendidosId }) => {
+  const handleSetMaisVendidosId = () => {
+    // Supondo que o ID seja "mais-vendidos"
+    setMaisVendidosId("mais-vendidos");
+  };
 
-const MaisVendidos = () => {
-  
+  const [minimizar, setMinimizar] = useState(true)
 
   return (
-    <div className='mais-vendidos'>
-      <h1>Mais vendidos</h1>
-      <ul>
+    <div className={`mais-vendidos ${minimizar ? '' : 'mais-vendidos-minimizado'}`} id='mais-vendidos'>
+      <h1 onClick={()=>{setMinimizar(!minimizar)}}>Mais vendidos</h1>
+      <ul className='ul'>
         <li className='product'>
             <div >
             <h4>Estrela</h4>
@@ -37,23 +43,23 @@ const MaisVendidos = () => {
 
         <li className='product'>
             <div >
-            <h4>Estrela</h4>
-            <p className='info-product'>Pão brioche, burguer artesanal de 90g, cheddar americano, fatias de bacon e molho barbecue.</p>
-            <p className='value-product'>R$ 23,00</p>
+            <h4>Nebulosa</h4>
+            <p className='info-product'>Pão brioche, burguer artesanal de 90g, cheddar americano, fatias de bacon, cebola caramelizada e maionese caseira.</p>
+            <p className='value-product'>R$ 25,00</p>
             </div>
             <div className='image'>
-                <img src={estrela}/>
+                <img src={nebulosa}/>
             </div>
         </li>
 
         <li className='product'>
             <div >
-            <h4>Estrela</h4>
-            <p className='info-product'>Pão brioche, burguer artesanal de 90g, cheddar americano, fatias de bacon e molho barbecue.</p>
-            <p className='value-product'>R$ 23,00</p>
+            <h4>Fritas com cheddar e bacon</h4>
+            <p className='info-product'>400g de batata frita com cheddar e bacon.</p>
+            <p className='value-product'>R$ 36,00</p>
             </div>
             <div className='image'>
-                <img src={estrela}/>
+                <img src={FritasCheddar}/>
             </div>
         </li>
       </ul>

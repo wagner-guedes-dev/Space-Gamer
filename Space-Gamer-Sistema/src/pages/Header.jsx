@@ -35,6 +35,8 @@ const Header = () => {
     }
   }
 
+  const [maisVendidosId, setMaisVendidosId] = useState('');
+
   return (
     <div className='header'>
       <div className='apresentacao'>
@@ -77,8 +79,8 @@ const Header = () => {
         
         
       </div>
-      <Carousel/>
-      <MaisVendidos/>
+      <Carousel maisVendidosId={maisVendidosId}/>
+      <MaisVendidos setMaisVendidosId={setMaisVendidosId}/>
     </div>
   );
 };

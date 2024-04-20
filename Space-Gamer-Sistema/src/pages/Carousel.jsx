@@ -3,7 +3,8 @@ import { Link } from 'react-scroll';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import './Carousel.css';
 
-const Carousel = () => {
+
+const Carousel = ({maisVendidosId} ) => {
   const [isSticky, setIsSticky] = useState(false);
   const x = useMotionValue(0);
   const xRange = [-500, 0];
@@ -34,9 +35,10 @@ const Carousel = () => {
         style={{ x }}
         drag="x"
         dragConstraints={{ left: -1700, right: 0 }}
-        whileTap={{ cursor: 'grabbing' }}
+        whileTap={{ cursor: '' }}
       >
         <motion.li className='li'>
+          
           <Link to="mais-vendidos"  smooth={true} duration={500}>Mais vendidos</Link>
         </motion.li>
         <motion.li>
